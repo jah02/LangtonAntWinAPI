@@ -5,7 +5,6 @@
 #include <thread> //c++11 std
 #include <tchar.h>
 #include "Engine.h"
-#include <iostream> //debug
 
 class GameGUI: public Engine {
 
@@ -26,7 +25,7 @@ private:
 
 public:
     GameGUI(HWND& handleWnd, HDC& hdcWnd);
-    virtual ~GameGUI() {};
+    virtual ~GameGUI() {delete playThread;};
     GameGUI(const GameGUI& cg) {}
     GameGUI& operator=(const GameGUI& cg) {return *this;}
 
